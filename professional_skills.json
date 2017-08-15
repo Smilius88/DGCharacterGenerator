@@ -1,0 +1,272 @@
+{
+	"Anthropologist / Historian": {
+		"Skills": {
+			"Choose": [1, {"Anthropology": 50, "Archaeology": 50}],
+			"Bureaucracy": 40,
+			"Foreign Language (Choose One)": 50,
+			"Foreign Language (Choose Another)": 40,
+			"History": 60,
+			"Occult": 40,
+			"Persuade": 40,
+			"Choose Unique": [2, {"Anthropology": 40, "Archaeology": 40, "HUMINT": 50, "Navigate": 50, "Ride": 50, "Search": 60, "Survival": 50}]
+		},
+		"Recommended Stats": ["INT"],
+		"Employer": "Generic",
+		"Bonds": 4
+	},
+	"Computer Scientist / Engineer": {
+		"Skills": {
+			"Computer Science": 60,
+			"Craft (Electrician)": 30,
+			"Craft (Mechanic)": 30,
+			"Craft (Microelectric)": 40,
+			"Science (Mathematics)": 40,
+			"SIGINT": 40,
+			"Choose Unique": [4, {"Accounting": 50, "Bureaucracy": 50, "Craft (Choose Another)": 40, "Foreign Language (Choose One)": 40, "Heavy Machinery": 50, "Law": 40, "Science (Choose Another)": 40}]
+		},
+		"Recommended Stats": ["INT"],
+		"Employer": "Generic",
+		"Bonds": 3
+	},
+	"Federal Agent": {
+		"Skills": {
+			"Alertness": 50,
+			"Bureaucracy": 40,
+			"Criminology": 40,
+			"Drive": 50,
+			"Firearms": 50,
+			"Forensics": 30,
+			"HUMINT": 60,
+			"Persuade": 50,
+			"Search": 50,
+			"Unarmed Combat": 60,
+			"Choose": [1, {"Accounting": 60, "Computer Science": 50, "Foreign Language (Choose One)": 50, "Heavy Weapons": 50, "Pharmacy": 50}]
+		},
+		"Recommended Stats": ["CON", "POW", "CHA"],
+		"Employer": "Generic",
+		"Bonds": 3
+	},
+	"Physician": {
+		"Skills": {
+			"Bureaucracy": 50,
+			"First Aid": 60,
+			"Medicine": 60,
+			"Persuade": 40,
+			"Pharmacy": 50,
+			"Science (Biology)": 60,
+			"Choose Unique": [2, {"Forensics": 50, "Psychotherapy": 50, "Surgery": 50}]
+		},
+		"Recommended Stats": ["INT", "POW", "DEX"],
+		"Employer": "Generic",
+		"Bonds": 3
+	},
+	"Scientist": {
+		"Skills": {
+			"Bureaucracy": 40,
+			"Computer Science": 40,
+			"Science (Choose One)": 60,
+			"Science (Choose Another)": 50,
+			"Science (Choose a Third)": 50,
+			"Choose": [3, {"Accounting": 40, "Foreign Language (Choose One)": 40, "Forensics": 40, "Law": 40, "Pharmacy": 40}]
+		},
+		"Recommended Stats": ["INT"],
+		"Employer": "Generic",
+		"Bonds": 4
+	},
+	"Special Operator": {
+		"Skills": {
+			"Alertness": 60,
+			"Athletics": 60,
+			"Demolitions": 40,
+			"Firearms": 60,
+			"Heavy Weapons": 50,
+			"Melee Weapons": 50,
+			"Military Science (Land)": 60,
+			"Navigate": 50,
+			"Stealth": 50,
+			"Survival": 50,
+			"Swim": 50,
+			"Unarmed Combat": 60
+		},
+		"Recommended Stats": ["STR", "CON", "POW"],
+		"Employer": "Generic",
+		"Bonds": 2
+	},
+	"Criminal": {
+		"Skills": {
+			"Alertness": 50,
+			"Criminology": 60,
+			"Dodge": 40,
+			"Drive": 50,
+			"Firearms": 40,
+			"Law": 40,
+			"Melee Weapons": 40,
+			"Persuade": 50,
+			"Stealth": 50,
+			"Unarmed Combat": 50,
+			"Choose": [2, {"Craft (Locksmithing)": 40, "Demolitions": 40, "Disguise": 50, "Foreign Language (Choose One)": 40, "Forensics": 40, "HUMINT": 50, "Navigate": 50, "Occult": 50, "Pharmacy": 40}]
+		},
+		"Recommended Stats": ["STR", "DEX"],
+		"Employer": "Generic",
+		"Bonds": 4
+	},
+	"Firefighter": {
+		"Skills": {
+			"Alertness": 50,
+			"Athletics": 60,
+			"Craft (Electrician)": 40,
+			"Craft (Mechanic)": 40,
+			"Demolitions": 50,
+			"Drive": 50,
+			"First Aid": 50,
+			"Forensics": 40,
+			"Heavy Machinery": 50,
+			"Navigate": 50,
+			"Search": 40
+		},
+		"Recommended Stats": ["STR", "DEX", "CON"],
+		"Employer": "Generic",
+		"Bonds": 3
+	},
+	"Foreign Service Officer": {
+		"Skills":{
+			"Accounting": 40,
+			"Anthropology": 40,
+			"Bureaucracy": 60,
+			"Foreign Language (Choose One)": 50,
+			"Foreign Language (Choose Another)": 50,
+			"Foreign Language (Choose a third)": 40,
+			"History": 40,
+			"HUMINT": 50,
+			"Law": 40,
+			"Persuade": 50
+		},
+		"Recommended Stats": ["INT", "CHA"],
+		"Employer": "Generic",
+		"Bonds": 3
+	},
+	"Intelligence Case Officer": {
+		"Skills": {
+			"Alertness": 50,
+			"Bureaucracy": 40,
+			"Criminology": 50,
+			"Disguise": 50,
+			"Drive": 40,
+			"Firearms": 40,
+			"Foreign Language (Choose One)": 50,
+			"Foreign Language (Choose Another)": 40,
+			"HUMINT": 60,
+			"Persuade": 60,
+			"SIGINT": 40,
+			"Stealth": 50,
+			"Unarmed Combat": 50
+		},
+		"Recommended Stats": ["INT", "CHA", "POW"],
+		"Employer": "Generic",
+		"Bonds": 2
+	},
+	"Lawyer / Business Executive": {
+		"Skills": {
+			"Accounting": 50,
+			"Bureaucracy": 50,
+			"HUMINT": 40,
+			"Persuade": 60,
+			"Choose": [4, {"Computer Science": 50, "Criminology": 60, "Foreign Language (Choose One)": 50, "Law": 50, "Pharmacy": 50}]
+		},
+		"Recommended Stats": ["INT", "CHA"],
+		"Employer": "Generic",
+		"Bonds": 4
+	},
+	"Media Specialist": {
+		"Skills": {
+			"Art (Choose One)": 60,
+			"History": 40,
+			"HUMINT": 40,
+			"Persuade": 50,
+			"Choose": [5, {
+				"Anthropology": 40,
+				"Archaeology": 40,
+				"Art (Choose Another)": 40,
+				"Bureaucracy": 50,
+				"Computer Science": 40,
+				"Foreign Language (Choose One)": 40,
+				"Law": 40,
+				"Military Science (Choose One)": 40,
+				"Occult": 50,
+				"Science (Choose One)": 40
+			}]
+		},
+		"Recommended Stats": ["INT", "CHA"],
+		"Employer": "Generic",
+		"Bonds": 4
+	},
+	"Nurse / Paramedic": {
+		"Skills": {
+			"Alertness": 40,
+			"Bureaucracy": 40,
+			"First Aid": 60,
+			"HUMINT": 40,
+			"Medicine": 40,
+			"Persuade": 40,
+			"Pharmacy": 40,
+			"Science (Biology)": 40,
+			"Choose": [2, {"Drive": 60, "Forensics": 40, "Navigate": 50, "Psychotherapy": 50, "Search": 60}]
+		},
+		"Recommended Stats": ["INT", "CHA", "POW"],
+		"Employer": "Generic",
+		"Bonds": 4
+	},
+	"Pilot / Sailor": {
+		"Skills": {
+			"Alertness": 60,
+			"Bureaucracy": 30,
+			"Craft (Electrician)": 40,
+			"Craft (Mechanic)": 40,
+			"Navigate": 50,
+			"Pilot (Choose One)": 60,
+			"Science (Meteorlogy)": 40,
+			"Swim": 40,
+			"Choose": [2, {"Foreign Language (Choose One)": 50, "Pilot (Choose Another)": 50, "Heavy Weapons": 50, "Military Science (Choose One)": 50}]
+		},
+		"Recommended Stats": ["DEX", "INT"],
+		"Employer": "Generic",
+		"Bonds": 3
+	},
+	"Police Officer": {
+		"Skills": {
+			"Alertness": 60,
+			"Bureaucracy": 40,
+			"Criminology": 40,
+			"Drive": 50,
+			"Firearms": 40,
+			"First Aid": 30,
+			"HUMINT": 50,
+			"Law": 30,
+			"Melee Weapons": 50,
+			"Navigate": 40,
+			"Persuade": 40,
+			"Search": 40,
+			"Unarmed Combat": 60,
+			"Choose": [1, {"Drive": 60, "Forensics": 40, "Navigate": 50, "Psychotherapy": 50, "Search": 60}]
+		},
+		"Recommended Stats": ["STR", "CON", "POW"],
+		"Employer": "Generic",
+		"Bonds": 4
+	},
+	"Program Manager": {
+		"Skills": {
+			"Accounting": 60,
+			"Bureaucracy": 60,
+			"Computer Science": 50,
+			"Criminology": 30,
+			"Foreign Language (Choose One)": 50,
+			"History": 40,
+			"Law": 40,
+			"Persuade": 50,
+			"Choose": [1, {"Anthropology": 30, "Art (Choose One)": 30, "Craft (Choose One)": 30, "Science (Choose One": 30}] 
+		},
+		"Recommended Stats": ["INT", "CHA"],
+		"Employer": "Generic",
+		"Bonds": 4
+	}
+}
