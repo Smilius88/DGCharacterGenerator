@@ -2,9 +2,9 @@ import json, random, argparse
 from sys import argv
 from CharacterCreationService import make_character
 
-BASE_SKILLS_JSON = "base_skills.json"
-PROFESSIONAL_SKILLS_JSON = "professional_skills.json"
-BACKGROUND_SKILLS_JSON = "bonus_skills.json"
+BASE_SKILLS_JSON = "resources/base_skills.json"
+PROFESSIONAL_SKILLS_JSON = "resources/professional_skills.json"
+BACKGROUND_SKILLS_JSON = "resources/bonus_skills.json"
 
 def make_professional_aliases():
 	aliases = {
@@ -91,19 +91,37 @@ def roll_stat():
 	dice.sort()
 	return sum(dice[1:])
 
+def random_stats():
+	return tuple(roll_stat() for _ in xrange(6))
+
+def optimize_stats(profession, num_choices, professional_skills):
+	professional_info = professional_skills[profession]
+	winner, maximum = random_stats(), 0
+	if "Recommended Stats" in professional_info:
+		recommended = professional_info["Recommended Stats"]
+		candidate_stats = [random_stats() for _ in xrange(num_choices)]
+		for stats in candidate_stats:
+			stats_map = dict(zip(("STR", "CON", "DEX", "INT", "POW", "CHA"), stats))
+			average = float(sum(stats_map[stat] for stat in recommended))/len(recommended)
+			if average > maximum:
+				winner, maximum = stats, average
+	return winner
+
 
 def make_parser():
 	parser = argparse.ArgumentParser(description = 'Generates random PCs for Delta Green.')
-	parser.add_argument('--make', '-m', nargs = '?', default = 1, help = "The number of PCs to generate. The default is 1", dest = 'num')
+	parser.add_argument('--make', '-m', nargs = '?', default = 1, help = "The number of PCs to generate. The default is 1.", dest = 'num')
 	parser.add_argument('--profession', '-p', nargs = '?', default = 'random', help = 'Give this profession to all the PCs generated.', dest ='prof_string')
 	parser.add_argument('--background', '-b', nargs = '?', default = 'random', help = 'Give this background to all the PCs generated.', dest = 'backgr_string')
 	parser.add_argument('--optimize', '-o', action = 'store_true', help = 
-			'If selected, this will attempt to opmtimize the PC. If a profession is selected, it will generate several characters (currently 5) and choose ' +
+			'If selected, this will attempt to opmtimize the PC. If a profession is selected, it will generate several characters (by default 3) and choose ' +
 			'the one with the most appropriate stats. If the profession is randomized, a profession suited to the stats will be selected.', dest = 'optimize')
+	parser.add_argument('-g', nargs = '?', dest = 'num_choices', default = 3, help = 'The number of charcters generated when optimize is selected and '
+		 + 'a profession is specified. The default is 3.')
 	return parser
 
 # Parse JSON, handle invoke randomization
-def main(num,  profession, background, optimize):
+def main(num,  profession, background, optimize, num_choices):
 
 	base_stats, professional_skills, background_skills = None, None, None
 
@@ -114,19 +132,23 @@ def main(num,  profession, background, optimize):
 	with open(BACKGROUND_SKILLS_JSON) as ifile:
 		background_skills = json.loads(ifile.read())
 
-	char_stats = tuple(roll_stat() for _ in xrange(6))
-	if profession == "random":
-		if optimize:
-			profession = optimize_profession(char_stats, professional_skills)
+	for _ in range(num):
+		temp_prof = profession
+		if profession != 'random' and optimize:
+			char_stats = optimize_stats(profession, num_choices, professional_skills) 
 		else:
-			profession = random.choice(professional_skills.keys())
-	if background == "random":
-		background = random.choice(background_skills.keys())
-
-
-	print '\n'
-	print make_character(char_stats, profession, background, professional_skills, background_skills, base_stats)
-	print '\n'
+			char_stats = random_stats()
+		if profession == "random":
+			if optimize:
+				profession = optimize_profession(char_stats, professional_skills)
+			else:
+				profession = random.choice(professional_skills.keys())
+		if background == "random":
+			background = random.choice(background_skills.keys())
+	
+		print make_character(char_stats, profession, background, professional_skills, background_skills, base_stats)
+		print '\n'
+		profession = temp_prof
 
 if __name__ == "__main__":
 	parser = make_parser()
@@ -135,6 +157,6 @@ if __name__ == "__main__":
 	prof_alias = make_professional_aliases()
 	profession = alias_map(args.prof_string, prof_alias)
 	background = alias_map(args.backgr_string, bg_alias)
-	main(args.num, profession, background, args.optimize)
+	main(int(args.num), profession, background, args.optimize, int(args.num_choices))
 
 
