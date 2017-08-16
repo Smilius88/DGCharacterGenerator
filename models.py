@@ -12,10 +12,14 @@ class Stats:
 		return '''Base Stats:\n%s\n\nDerived Stats:\nHP: %d, Sanity: %d, Breaking Point: %d, Willpower: %d''' % (stats_str, self.hp, self.san, self.bp, self.wp)
 
 class Skills:
-	def __init__(self, base_skills):
+	def __init__(self, base_skills, professional_skills, bonus_skills):
 		self.skills = dict()
 		for skill, base in base_skills.iteritems():
 			self.skills[skill] = (False, base)
+		self.__add_professional_skills_package(professional_skills)
+		self.__add_bonus_skills_package(bonus_skills)
+		self.__combine_bucket_skills()
+
 	def __repr__(self):
 		skill_strings = []
 		for key, val in self.skills.iteritems():
@@ -27,16 +31,47 @@ class Skills:
 	def __match_optional_skill(self, skill):
 		new = [token.strip() for token in skill.split('(')]
 		return new[0] in self.skills
-	def add_professional_skills_package(self, professional_skills):
+	def __add_professional_skills_package(self, professional_skills):
 			for skill, val in professional_skills.iteritems():
 				self.skills[skill] = (True, val)
-	def add_bonus_skills_package(self, bonus_skills):
+	def __add_bonus_skills_package(self, bonus_skills):
 			for skill in bonus_skills:
 				if skill in self.skills.keys():
 					_, stat = self.skills[skill]
 					self.skills[skill] = (True, stat + 20)
 				elif self.__match_optional_skill(skill):
 					self.skills[skill] = (True, 20)
+	def __combine_bucket_skills(self):
+		bucket_dict = {
+			 "Art": {'generic': [], 'specific':[]},
+			"Craft": {'generic': [], 'specific':[]},
+			"Foreign Language": {'generic': [], 'specific':[]},
+			"Military Science": {'generic': [], 'specific':[]},
+			"Pilot": {'generic': [], 'specific':[]},
+			"Science": {'generic': [], 'specific':[]}
+		}
+		for skill in self.skills.keys():
+			tup = tuple(st.strip(" ()") for st in skill.split("("))
+			if tup[0] in bucket_dict:
+				if self.skills[skill][0] and (len(tup) == 1 or tup[1] not in ['Choose Another', 'Choose a Third']):
+					if (len(tup) == 1 or tup[1] == 'Choose One'):
+						bucket_dict[tup[0]]['generic'].append(skill)
+					else:
+						bucket_dict[tup[0]]['specific'].append(skill)
+		for key, value in bucket_dict.iteritems():
+			if value['generic'] and value['specific']:
+				for skill in value['generic']:
+					guard = 90
+					while guard >= 80 and value['specific']:
+						maximum_skill = max(value['specific'], key = lambda x: self.skills[x][1])
+						guard =  self.skills[maximum_skill][1]
+						if self.skills[maximum_skill][1] >= 80:
+							value['specific'].remove(maximum_skill)
+					if not value['generic']:
+						continue
+					else:
+						self.skills[maximum_skill] = (True, self.skills[maximum_skill][1] + self.skills[skill][1])
+						self.skills[skill] = (False, 0)
 	def __getitem__(self, key):
 		return self.skills[key]
 

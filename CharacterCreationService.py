@@ -6,9 +6,7 @@ def make_character(stats, profession, background, professional_skills, backgroun
 	prof_skills = make_professional_skills(professional_skills[profession]["Skills"])
 	char_background = make_background_skills(background_skills[background], base_skills.keys())
 	char_stats = Stats(*stats)
-	char_skills = Skills(base_skills)
-	char_skills.add_professional_skills_package(prof_skills)
-	char_skills.add_bonus_skills_package(char_background)
+	char_skills = Skills(base_skills, prof_skills, char_background)
 	bonds = professional_skills[profession]["Bonds"]
 	character = Character(char_stats, char_skills, profession, bonds, background)
 	return character

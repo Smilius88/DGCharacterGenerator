@@ -24,7 +24,8 @@ def make_professional_aliases():
 		'Anthropologist / Historian': set(['anthropologist', 'historian', 'anthropologist/historian', 'anthropologist / historian']),
 		'Lawyer / Business Executive': set(['lawyer', 'business executive', 'executive', 'lawyer / business executive', 'CEO', 'lawyer/business executive']),
 		'Criminal': set(['crook', 'criminal', 'gangster', 'forger', 'hit man', 'mafia']),
-		'Computer Scientist / Engineer': set(['computer scientist', 'hacker', 'engineer', 'computer scientist / engineer', 'computer scientist/engineer'])
+		'Computer Scientist / Engineer': set(['computer scientist', 'hacker', 'engineer', 'computer scientist / engineer', 'computer scientist/engineer']),
+		'Soldier or Marine': set(['soldier', 'army', 'marine', 'marines', 'soldier or marine', 'soldier / marine', 'soldier/marine']),
 	}
 	return aliases
 
@@ -134,15 +135,17 @@ def main(num,  profession, background, optimize, num_choices):
 
 	for _ in range(num):
 		temp_prof = profession
-		if profession != 'random' and optimize:
-			char_stats = optimize_stats(profession, num_choices, professional_skills) 
-		else:
+		if profession == 'random':
 			char_stats = random_stats()
-		if profession == "random":
 			if optimize:
 				profession = optimize_profession(char_stats, professional_skills)
 			else:
 				profession = random.choice(professional_skills.keys())
+		else:
+			if optimize:
+				char_stats = optimize_stats(profession, num_choices, professional_skills) 
+			else:
+				char_stats = random_stats()
 		if background == "random":
 			background = random.choice(background_skills.keys())
 	

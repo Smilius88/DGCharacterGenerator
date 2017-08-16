@@ -135,7 +135,7 @@
 			"Bureaucracy": 60,
 			"Foreign Language (Choose One)": 50,
 			"Foreign Language (Choose Another)": 50,
-			"Foreign Language (Choose a third)": 40,
+			"Foreign Language (Choose a Third)": 40,
 			"History": 40,
 			"HUMINT": 50,
 			"Law": 40,
@@ -224,7 +224,7 @@
 			"Craft (Mechanic)": 40,
 			"Navigate": 50,
 			"Pilot (Choose One)": 60,
-			"Science (Meteorlogy)": 40,
+			"Science (Meteorology)": 40,
 			"Swim": 40,
 			"Choose": [2, {"Foreign Language (Choose One)": 50, "Pilot (Choose Another)": 50, "Heavy Weapons": 50, "Military Science (Choose One)": 50}]
 		},
@@ -266,6 +266,24 @@
 			"Choose": [1, {"Anthropology": 30, "Art (Choose One)": 30, "Craft (Choose One)": 30, "Science (Choose One": 30}] 
 		},
 		"Recommended Stats": ["INT", "CHA"],
+		"Employer": "Generic",
+		"Bonds": 4
+	},
+	"Soldier or Marine": {
+		"Skills": {
+			"Alertness": 50,
+			"Athletics": 50,
+			"Bureaucracy": 30,
+			"Drive": 40,
+			"Firearms": 40,
+			"First Aid": 40,
+			"Military Science (Land)": 40,
+			"Navigate": 40,
+			"Persuade": 30,
+			"Unarmed Combat": 50,
+			"Choose": [3, {"Artillery": 40, "Computer Science": 40, "Craft (Choose One)": 40, "Demolitions": 40, "Foreign Language (Choose One)": 40, "Heavy Machinery": 50, "Heavy Weapons": 40, "Search": 60, "SIGINT": 40, "Swim": 60}]
+		},
+		"Recommended Stats": ["STR", "CON"],
 		"Employer": "Generic",
 		"Bonds": 4
 	}
