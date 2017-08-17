@@ -1,6 +1,6 @@
 # DGCharacterGenerator
 
-This generates random character stats and skills for Arc Dream's game [Delta Green](http://www.delta-green.com/). Right now there is limited functionality. Right now, it prints the character stats to stdout. 
+This generates random character stats and skills for Arc Dream's game [Delta Green](http://www.delta-green.com/), and prints the character stats to stdout. 
 
 Currently, only the generic professions are available, i.e. the ones on pages 20-24. Specific agency builds will be added in a future release.
 
