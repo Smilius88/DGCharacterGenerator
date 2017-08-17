@@ -26,7 +26,7 @@ DGCharacterGenerator.py -p 'federal agent' -o -m 4
 
 The flags ``-p`` and ``-b`` (``--profession`` and ``--background``) allow you to specify which profession or background you would like your character to have. Currently, only the generic professions are avialable, so you can be a Federal Agent but not an Navy/ONI operator. 
 
-You don't have to copy the profession or background name exactly- you can look in ``DGCharacterGenerator.py`` to see which words the generator will recognize. Be sure to use single or double quotations marks if there is more that one word in the profession: ``\"federal agent\"``, not ``federal agent``.
+You don't have to copy the profession or background name exactly- you can look in ``DGCharacterGenerator.py`` to see which words the generator will recognize. Be sure to use single or double quotations marks if there is more that one word in the profession: ``"federal agent"``, not ``federal agent``.
 
 ### Optimization
 
