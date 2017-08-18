@@ -134,7 +134,7 @@ def main(num,  profession, background, optimize, num_choices):
 		background_skills = json.loads(ifile.read())
 
 	for _ in range(num):
-		temp_prof = profession
+		temp_prof, temp_bg = profession, background
 		if profession == 'random':
 			char_stats = random_stats()
 			if optimize:
@@ -151,7 +151,7 @@ def main(num,  profession, background, optimize, num_choices):
 	
 		print make_character(char_stats, profession, background, professional_skills, background_skills, base_stats)
 		print '\n'
-		profession = temp_prof
+		profession, background = temp_prof, temp_bg
 
 if __name__ == "__main__":
 	parser = make_parser()
