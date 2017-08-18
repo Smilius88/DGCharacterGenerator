@@ -19,7 +19,7 @@ You can view a full list of options by running the ``--help`` command.
 The ``-m`` or ``--make`` flag, together with a number, allows you to specify how many characters you want. For example, this is how to generate 4 federal agents, with stats optimized for the profession:
 
 ```bash
-DGCharacterGenerator.py -p 'federal agent' -o -m 4
+python DGCharacterGenerator.py -p 'federal agent' -o -m 4
 ```
 
 ### Specifying Background and Profession:
