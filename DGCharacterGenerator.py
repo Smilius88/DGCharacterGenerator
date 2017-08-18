@@ -45,7 +45,7 @@ def make_background_aliases():
 		'MBA': set(['mba', 'ceo']),
 		'Police Officer': set(['cop', 'police officer', 'detective']),
 		'Gangster or Deep Cover': set(['mafia', 'crook', 'criminal', 'deep cover', 'undercover agent', 'undercover', 'gangster or deep cover', 'gangster/deep cover', 'gangster / deep cover']),
-		'Translator': set('translator'),
+		'Translator': set(['translator']),
 		'Photographer': set(['photographer', 'photojournalist']),
 		'Pilot or Sailor':  set(['pilot', 'sailor', 'sailor / pilot', 'sailor/pilot', 'airplane pilot', 'captain', 'pilot or sailor']),
 		'Combat Veteran': set(['veteran', 'combat veteran']),
