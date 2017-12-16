@@ -280,7 +280,7 @@
 			"History": 40,
 			"Law": 40,
 			"Persuade": 50,
-			"Choose": [1, {"Anthropology": 30, "Art (Choose One)": 30, "Craft (Choose One)": 30, "Science (Choose One": 30}] 
+			"Choose": [1, {"Anthropology": 30, "Art (Choose One)": 30, "Craft (Choose One)": 30, "Science (Choose One)": 30}] 
 		},
 		"Recommended Stats": ["INT", "CHA"],
 		"Employer": "Generic",

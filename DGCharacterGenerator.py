@@ -57,7 +57,7 @@ def make_background_aliases():
 		'Urban Explorer': set(['urban explorer']),
 		'Counselor': set(['counselor']),
 		'Author, Editor, or Journalist': set(['author', 'editor', 'journalist', 'author, editor, or journalist', 'author, editor or journalist']),
-		'Blue-Collar Worker': set(['blue collar worker', 'factory worker']),
+		'Blue-Collar Worker': set(['blue collar worker', 'factory worker', 'blue-collar worker', 'worker', 'prole']),
 		'Computer Enthusiast or Hacker': set(['computer enthusiast', 'hacker', 'computer enthusiast or hacker', 'computer scientist']),
 		'Criminalist': set(['criminalist', 'forensics', 'csi']),
 		'Occult Investigator or Conspiracy Theorist': set(['occult investigator', 'paranormal investigator', 'parapsychologist', 'conspiracy theorist', 'occult investigator or conspiracy theorist'])
