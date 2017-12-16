@@ -145,6 +145,23 @@
 		"Employer": "Generic",
 		"Bonds": 3
 	},
+	"Intelligence Analyst": {
+		"Skills": {
+			"Anthropology": 40,
+			"Bureaucracy": 50,
+			"Computer Science": 40,
+			"Criminology": 40,
+			"Foreign Language (Choose One)": 50,
+			"Foreign Language (Choose Another)": 50,
+			"Foreign Language (Choose a Third)": 40,
+			"History": 40,
+			"HUMINT": 50,
+			"SIGINT": 40
+		},
+		"Recommended Stats": ["INT"],
+		"Employer": "Generic",
+		"Bonds": 3
+	},
 	"Intelligence Case Officer": {
 		"Skills": {
 			"Alertness": 50,
