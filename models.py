@@ -39,11 +39,12 @@ class Skills:
 				if skill in self.skills.keys():
 					_, stat = self.skills[skill]
 					self.skills[skill] = (True, stat + 20)
-				elif self.__match_optional_skill(skill):
+#				elif self.__match_optional_skill(skill):
+				else:
 					self.skills[skill] = (True, 20)
 	def __combine_bucket_skills(self):
 		bucket_dict = {
-			 "Art": {'generic': [], 'specific':[]},
+			"Art": {'generic': [], 'specific':[]},
 			"Craft": {'generic': [], 'specific':[]},
 			"Foreign Language": {'generic': [], 'specific':[]},
 			"Military Science": {'generic': [], 'specific':[]},
@@ -68,7 +69,7 @@ class Skills:
 						if self.skills[maximum_skill][1] >= 80:
 							value['specific'].remove(maximum_skill)
 					if not value['generic']:
-						continue
+						pass
 					else:
 						self.skills[maximum_skill] = (True, self.skills[maximum_skill][1] + self.skills[skill][1])
 						self.skills[skill] = (False, 0)
